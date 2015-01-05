@@ -18,14 +18,14 @@ module.exports = function (grunt) {
 			'.tmp'
 		],
 
-		excel_vocabulary: {
+		json2php: {
 			convert: {
 				expand: true,
 				cwd: 'examples',
 				dest: '.tmp',
-				ext: '.json',
+				ext: '.php',
 				src: [
-					'**/*.xlsx'
+					'**/*.json'
 				]
 			}
 		},
@@ -55,7 +55,7 @@ module.exports = function (grunt) {
 	grunt.registerTask('test', [
 		'jshint',
 		'clean',
-		'excel_vocabulary',
+		'json2php',
 		'nodeunit'
 	]);
 

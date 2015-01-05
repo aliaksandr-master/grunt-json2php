@@ -7,7 +7,12 @@
     "test": "tests"
   },
   "scripts": {
-    "test": "npm test"
+    "test_jshint": "node_modules/.bin/grunt jshint",
+    "test_unit": "node_modules/.bin/nodeunit tests/",
+    "test_unit_cov": "GRUNTEXCELVOC_COV=1 node_modules/.bin/nodeunit --reporter=lcov tests/",
+    "jscov": "node_modules/.bin/jscoverage lib",
+    "test": "npm run test_jshint && npm run test_unit",
+    "coveralls": "npm run jscov && npm run test_unit_cov | node_modules/.bin/coveralls"
   },
   "repository": {
     "type": "git",
@@ -18,14 +23,6 @@
     "json",
     "php-array"
   ],
-  "scripts": {
-    "test_jshint": "node_modules/.bin/grunt jshint",
-    "test_unit": "node_modules/.bin/nodeunit tests/",
-    "test_unit_cov": "GRUNTEXCELVOC_COV=1 node_modules/.bin/nodeunit --reporter=lcov tests/",
-    "jscov": "node_modules/.bin/jscoverage lib",
-    "test": "npm run test_jshint && npm run test_unit",
-    "coveralls": "npm run jscov && npm run test_unit_cov | node_modules/.bin/coveralls"
-  },
   "dependencies": {
     "lodash": "~2.4.1"
   },
@@ -34,6 +31,7 @@
     "coveralls": "~2.11.2",
     "grunt": "~0.4.5",
     "grunt-cli": "~0.1.13",
+    "grunt-contrib-clean": "^0.6.0",
     "grunt-contrib-jshint": "~0.10.0",
     "grunt-contrib-nodeunit": "~0.4.1",
     "grunt-contrib-watch": "~0.6.1",
