@@ -4,7 +4,7 @@ var path = require('path');
 var convert = require('./../lib');
 
 module.exports = function (grunt) {
-	grunt.registerMultiTask('excel_vocabulary', function () {
+	grunt.registerMultiTask('json2php', function () {
 		var options = this.options({
             root: process.cwd(),
 
