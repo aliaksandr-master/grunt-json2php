@@ -7,6 +7,8 @@
 
 # grunt-json2php
 
+[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/aliaksandr-pasynkau/grunt-json2php?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 Grunt plugin for convert json file to php file with associative array.
 
 ## Getting Started
